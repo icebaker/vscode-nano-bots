@@ -23,7 +23,9 @@ Enhance your productivity and workflow by bringing the power of Artificial Intel
 
 ## Installation
 
-To install the extension, follow these simple steps:
+You can install "Nano Bots" directly from the Visual Studio Code Marketplace via [this link](https://marketplace.visualstudio.com/items?itemName=icebaker.nano-bots) or by searching for it within the editor.
+
+Alternatively, you can choose to install it manually:
 
 1. Download the most recent `.vsix` file from [Releases](https://github.com/icebaker/vscode-nano-bots/releases).
 2. Open VS Code and navigate to the Extensions view by clicking on "View" -> "Extensions" (or press Ctrl+Shift+X).
