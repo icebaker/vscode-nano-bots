@@ -23,7 +23,14 @@ Enhance your productivity and workflow by bringing the power of Artificial Intel
 
 ## Installation
 
-TODO
+To install the extension, follow these simple steps:
+
+1. Download the most recent `.vsix` file from [Releases](https://github.com/icebaker/vscode-nano-bots/releases).
+2. Open VS Code and navigate to the Extensions view by clicking on "View" -> "Extensions" (or press Ctrl+Shift+X).
+3. In the top right-hand corner of the Extensions window, click on the "..." menu and select "Install from VSIX..."
+4. Choose the `.vsix` file you downloaded in step 1.
+
+Once completed, the extension will be successfully installed and available for use in VS Code.
 
 ### Setup
 
