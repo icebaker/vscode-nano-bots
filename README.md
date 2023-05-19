@@ -23,7 +23,7 @@ Enhance your productivity and workflow by bringing the power of Artificial Intel
 
 ## Installation
 
-You can install "Nano Bots" directly from the Visual Studio Code Marketplace via [this link](https://marketplace.visualstudio.com/items?itemName=icebaker.nano-bots) or by searching for it within the editor.
+You can install Nano Bots directly from the Visual Studio Code Marketplace via [this link](https://marketplace.visualstudio.com/items?itemName=icebaker.nano-bots) or by searching for it within the editor.
 
 Alternatively, you can choose to install it manually:
 
