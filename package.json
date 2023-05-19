@@ -1,0 +1,73 @@
+{
+  "name": "nano-bots",
+  "displayName": "Nano Bots",
+  "description": "Enhance your productivity and streamline your workflow by integrating the power of Nano Bots with your Visual Studio Code editor: small, AI-powered bots easily shared as a single file, designed to support multiple providers such as Vicuna, OpenAI ChatGPT, Google PaLM, Alpaca, and LLaMA.",
+  "version": "0.0.1",
+  "repository": "https://github.com/icebaker/vscode-nano-bots",
+  "engines": {
+    "vscode": "^1.78.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "title": "🤖 Nano Bots: Prompt",
+        "command": "nano-bots.prompt",
+        "args": { "state": "-", "mode": "add" }
+      },
+      {
+        "title": "🤖 Nano Bots: Apply",
+        "command": "nano-bots.apply",
+        "args": {
+          "state": "-", "mode": "replace",
+          "prefix": "", "format": "[prompt]: [input]"
+        }
+      },
+      {
+        "title": "🤖 Nano Bots: Evaluate",
+        "command": "nano-bots.evaluate",
+        "args": { "state": "-", "mode": "replace" }
+      },
+      {
+        "command": "nano-bots.stop",
+        "title": "🤖 Nano Bots: Stop"
+      }
+    ],
+    "configuration": {
+        "type": "object",
+        "title": "Nano Bots Settings",
+        "properties": {
+            "🤖 Nano Bots.NANO_BOTS_API_ADDRESS": {
+                "type": "string",
+                "default": "http://localhost:3048",
+                "description": "Set the address for the Nano Bots API."
+            },
+            "🤖 Nano Bots.NANO_BOTS_STREAM": {
+                "type": "boolean",
+                "default": true,
+                "description": "Enable or disable streaming."
+            }
+        }
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.78.0",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "eslint": "^8.39.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^5.0.4",
+    "@vscode/test-electron": "^2.3.0"
+  }
+}
