@@ -2,7 +2,7 @@
   "name": "nano-bots",
   "displayName": "Nano Bots",
   "description": "Enhance your productivity and streamline your workflow by integrating the power of Nano Bots with your Visual Studio Code editor: small, AI-powered bots easily shared as a single file, designed to support multiple providers such as Vicuna, OpenAI ChatGPT, Google PaLM, Alpaca, and LLaMA.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "repository": "https://github.com/icebaker/vscode-nano-bots",
   "license": "MIT",
   "icon": "icon.png",
