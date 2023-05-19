@@ -130,7 +130,7 @@ provider:
 
 ## Shortcuts
 
-There are no default shortcuts, but you can add your own by going to "Preferences" and selecting "Key Binding". We recommend the following ones:
+To add your own shortcuts, navigate to "File" > "Preferences" > "Keyboard Shortcuts". There are no default shortcuts, but we suggest the following shortcuts for your convenience:
 
 ### Suggested Defaults
 
