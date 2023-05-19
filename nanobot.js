@@ -23,11 +23,12 @@ class NanoBot {
     }
 
     static async cartridges(config) {
-        return await this.send_request(config, null, 'GET', '/cartridges');
+        return await this.send_request(config, null, 'GET', '/cartridges', 1000);
     }
 
     static async cartridge(config, cartridge_id) {
-        return await this.send_request(config, { id: cartridge_id }, 'POST', '/cartridges/source');
+        return await this.send_request(
+            config, { id: cartridge_id }, 'POST', '/cartridges/source', 1000);
     }
 
     static non_stream_request(config, params, cartridge, callback) {
@@ -54,7 +55,7 @@ class NanoBot {
         this.send_request(config, params, 'POST', '/cartridges/stream').then((response) => {
             let stream_id = response.id;
             if (!stream_id) {
-                vscode.window.showErrorMessage('No Stream ID received.');
+                vscode.window.showErrorMessage('Nano Bots: No Stream ID received.');
                 return;
             }
 
@@ -86,7 +87,7 @@ class NanoBot {
         });
     }
 
-    static async send_request(config, params, method, path) {
+    static async send_request(config, params, method, path, timeout=undefined) {
         return new Promise((resolve, reject) => {
             const api_url = new url.URL(config.NANO_BOTS_API_ADDRESS);
             const options = {
@@ -94,6 +95,7 @@ class NanoBot {
                 port: api_url.port,
                 path: path,
                 method: method,
+                timeout: timeout,
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -112,6 +114,7 @@ class NanoBot {
             });
 
             request.on('error', (error) => {
+                vscode.window.showErrorMessage('Nano Bots: ' + error.message);
                 reject(error);
             });
 

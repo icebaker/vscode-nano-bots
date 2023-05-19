@@ -38,7 +38,7 @@ function NanoBotsCommand(params) {
 class NanoBotsDispatcher {
     static async run(params, counter) {
         if (counter > 2) {
-            vscode.window.showErrorMessage('Too many input requests: ' + counter);
+            vscode.window.showErrorMessage('Nano Bots: Too many input requests: ' + counter);
             return;
         }
 
@@ -54,7 +54,8 @@ class NanoBotsDispatcher {
 
         const editor = vscode.window.activeTextEditor;
         if (!editor) {
-        	vscode.window.showErrorMessage('No open text editor.');
+            vscode.window.showErrorMessage(
+                'Nano Bots: No open file. Open one to proceed.');
             return;
         }
 
