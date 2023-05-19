@@ -270,4 +270,6 @@ For more information on extension development, refer to the [Your First Extensio
 ```bash
 npm run test
 npm run lint --fix
+
+vsce package
 ```
