@@ -10,7 +10,8 @@ class NanoBotHelpers {
 
         return {
             NANO_BOTS_API_ADDRESS: config.get('NANO_BOTS_API_ADDRESS'),
-            NANO_BOTS_STREAM: config.get('NANO_BOTS_STREAM')
+            NANO_BOTS_STREAM: config.get('NANO_BOTS_STREAM'),
+            NANO_BOTS_USER_IDENTIFIER: config.get('NANO_BOTS_USER_IDENTIFIER')
         };
     }
 

@@ -97,7 +97,8 @@ class NanoBot {
                 method: method,
                 timeout: timeout,
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'NANO_BOTS_USER_IDENTIFIER': 'vscode/' + config.NANO_BOTS_USER_IDENTIFIER
                 }
             };
 

@@ -42,6 +42,7 @@ Once you have access to the Nano Bots API, you can navigate to "File" -> "Prefer
 
 - `NANO_BOTS_API_ADDRESS`: `http://localhost:3048`
 - `NANO_BOTS_STREAM`: `true`
+- `NANO_BOTS_USER_IDENTIFIER`: `anonymous` (`your-name`)
 
 ![settings](https://user-images.githubusercontent.com/113217272/239404558-aacd4efa-1657-4516-baeb-d0c564c7fcb2.png)
 

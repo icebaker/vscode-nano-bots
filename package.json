@@ -57,6 +57,11 @@
                 "default": "http://localhost:3048",
                 "description": "Set the address for the Nano Bots API."
             },
+            "🤖 Nano Bots.NANO_BOTS_USER_IDENTIFIER": {
+                "type": "string",
+                "default": "anonymous",
+                "description": "Your custom user identifier (user-name)."
+            },
             "🤖 Nano Bots.NANO_BOTS_STREAM": {
                 "type": "boolean",
                 "default": true,
