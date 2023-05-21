@@ -1,6 +1,7 @@
 const vscode = require('vscode');
 
 const http = require('http');
+const https = require('https');
 const url = require('url');
 
 const NanoBotState = require('./nanobot_state');
@@ -102,7 +103,9 @@ class NanoBot {
                 }
             };
 
-            const request = http.request(options, (response) => {
+            const protocol = api_url.protocol.startsWith('https') ? https : http;
+
+            const request = protocol.request(options, (response) => {
                 let data = '';
 
                 response.on('data', (chunk) => {
@@ -110,7 +113,11 @@ class NanoBot {
                 });
 
                 response.on('end', () => {
-                    resolve(JSON.parse(data));
+                    try {
+                        resolve(JSON.parse(data));
+                    } catch (error) {
+                        reject(error);
+                    }
                 });
             });
 
