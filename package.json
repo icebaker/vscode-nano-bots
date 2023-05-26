@@ -54,7 +54,7 @@
         "properties": {
             "🤖 Nano Bots.NANO_BOTS_API_ADDRESS": {
                 "type": "string",
-                "default": "https://api.nanobots.icebaker.me",
+                "default": "https://api.nbots.io",
                 "description": "Set the address for the Nano Bots API."
             },
             "🤖 Nano Bots.NANO_BOTS_USER_IDENTIFIER": {
