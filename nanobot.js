@@ -88,7 +88,7 @@ class NanoBot {
         });
     }
 
-    static async send_request(config, params, method, path, timeout=undefined) {
+    static async send_request(config, params, method, path, timeout=undefined, retries=0) {
         return new Promise((resolve, reject) => {
             const api_url = new url.URL(config.NANO_BOTS_API_ADDRESS);
             const options = {
@@ -121,9 +121,14 @@ class NanoBot {
                 });
             });
 
-            request.on('error', (error) => {
-                vscode.window.showErrorMessage('Nano Bots: ' + error.message);
-                reject(error);
+            request.on('error', async (error) => {
+                if(retries < 2) {
+                    console.warn(`[${retries + 1}] RETRY`);
+                    return await this.send_request(config, params, method, path, timeout, retries);
+                } else {
+                    vscode.window.showErrorMessage('Nano Bots: ' + error.message);
+                    reject(error);
+                }
             });
 
             if (params) {
