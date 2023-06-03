@@ -5,7 +5,7 @@
   "version": "0.0.10",
   "repository": "https://github.com/icebaker/vscode-nano-bots",
   "license": "MIT",
-  "icon": "icon.png",
+  "icon": "icon-v2.png",
   "publisher": "icebaker",
   "engines": {
     "vscode": "^1.70.0"
