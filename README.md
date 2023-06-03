@@ -297,8 +297,9 @@ Navigate to the `vscode-nano-bots` folder and open it in Visual Studio Code usin
 For more information on extension development, refer to the [Your First Extension](https://code.visualstudio.com/api/get-started/your-first-extension) page.
 
 ```bash
+npm run format
+npm run lint
 npm run test
-npm run lint --fix
 
 vsce package
 ```

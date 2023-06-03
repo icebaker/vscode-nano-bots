@@ -142,7 +142,7 @@ class NanoBot {
       request.on('error', async (error) => {
         if (retries < 2) {
           console.warn(`[${retries + 1}] RETRY`);
-          return await this.send_request(config, params, method, path, timeout, retries);
+          return await this.send_request(config, params, method, path, timeout, retries + 1);
         } else {
           vscode.window.showErrorMessage('Nano Bots: ' + error.message);
           reject(error);
@@ -154,6 +154,17 @@ class NanoBot {
       }
 
       request.end();
+
+      if (timeout) {
+        const timer = setTimeout(() => {
+          request.abort();
+          reject(new Error('Request timed out'));
+        }, timeout);
+
+        request.on('response', () => {
+          clearTimeout(timer);
+        });
+      }
     });
   }
 }
