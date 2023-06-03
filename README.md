@@ -68,6 +68,7 @@ After installation, you will have the following commands available in the comman
 The Prompt command works like a traditional chat, allowing you to ask a question and receive an answer from the Nano Bot.
 
 Example:
+
 ```text
   Prompt: write a hello world in Ruby
 
@@ -96,6 +97,7 @@ https://user-images.githubusercontent.com/113217272/239405546-74bbfb6c-4095-40bc
 The Evaluate command sends your currently selected text to a Nano Bot without any additional instructions.
 
 Example:
+
 ```text
 Selected Text: Hi!
 
@@ -140,7 +142,6 @@ provider:
       address: ENV/OPENAI_API_ADDRESS
       access-token: ENV/OPENAI_API_ACCESS_TOKEN
       user-identifier: ENV/OPENAI_API_USER_IDENTIFIER
-
 ```
 
 ## Shortcuts
@@ -151,36 +152,36 @@ To add your own shortcuts, navigate to "File" > "Preferences" > "Keyboard Shortc
 
 ```json
 [
-    {
-        "key": "ctrl+b ctrl+p",
-        "command": "nano-bots.prompt",
-        "args": {
-            "state": "-",
-            "mode": "add"
-        }
-    },
-    {
-        "key": "ctrl+b ctrl+l",
-        "command": "nano-bots.apply",
-        "args": {
-            "state": "-",
-            "mode": "replace",
-            "prefix": "",
-            "format": "[prompt]: [input]"
-        }
-    },
-    {
-        "key": "ctrl+b ctrl+b",
-        "command": "nano-bots.evaluate",
-        "args": {
-            "state": "-",
-            "mode": "replace"
-        }
-    },
-    {
-        "key": "ctrl+b ctrl+k",
-        "command": "nano-bots.stop"
+  {
+    "key": "ctrl+b ctrl+p",
+    "command": "nano-bots.prompt",
+    "args": {
+      "state": "-",
+      "mode": "add"
     }
+  },
+  {
+    "key": "ctrl+b ctrl+l",
+    "command": "nano-bots.apply",
+    "args": {
+      "state": "-",
+      "mode": "replace",
+      "prefix": "",
+      "format": "[prompt]: [input]"
+    }
+  },
+  {
+    "key": "ctrl+b ctrl+b",
+    "command": "nano-bots.evaluate",
+    "args": {
+      "state": "-",
+      "mode": "replace"
+    }
+  },
+  {
+    "key": "ctrl+b ctrl+k",
+    "command": "nano-bots.stop"
+  }
 ]
 ```
 
@@ -216,6 +217,7 @@ Selected Text: How are you doing?
 ```
 
 Will produce the prompt:
+
 ```text
 translate to french: How are you doing?
 ```
@@ -224,9 +226,9 @@ If you prefer to skip the prompt for selecting a Cartridge when using those comm
 
 ```json
 {
-    "key": "ctrl+b ctrl+b",
-    "command": "nano-bots.evaluate",
-    "args": { "state": "-", "mode": "replace", "cartridge": "-" }
+  "key": "ctrl+b ctrl+b",
+  "command": "nano-bots.evaluate",
+  "args": { "state": "-", "mode": "replace", "cartridge": "-" }
 }
 ```
 
@@ -236,9 +238,9 @@ If you want to define a straightforward command that does not require any user i
 
 ```json
 {
-    "key": "ctrl+b ctrl+p",
-    "command": "nano-bots.prompt",
-    "args": { "state": "-", "mode": "add", "cartridge": "-", "input": "Hello!" }
+  "key": "ctrl+b ctrl+p",
+  "command": "nano-bots.prompt",
+  "args": { "state": "-", "mode": "add", "cartridge": "-", "input": "Hello!" }
 }
 ```
 
@@ -246,19 +248,22 @@ If you wish to define a command that applies to your current selection without r
 
 ```json
 {
-    "key": "ctrl+b ctrl+b",
-    "command": "nano-bots.evaluate",
-    "args": { "state": "-", "mode": "replace", "cartridge": "-" }
+  "key": "ctrl+b ctrl+b",
+  "command": "nano-bots.evaluate",
+  "args": { "state": "-", "mode": "replace", "cartridge": "-" }
 }
 ```
 
 ```json
 {
-    "key": "ctrl+b ctrl+l",
-    "command": "nano-bots.apply",
-    "args": {
-      "state": "-", "mode": "replace",
-      "cartridge": "-", "input": "translate to en-us" }
+  "key": "ctrl+b ctrl+l",
+  "command": "nano-bots.apply",
+  "args": {
+    "state": "-",
+    "mode": "replace",
+    "cartridge": "-",
+    "input": "translate to en-us"
+  }
 }
 ```
 
@@ -268,10 +273,12 @@ All interactions with Nano Bots are stateless by default. However, if you wish t
 
 ```json
 {
-    "key": "ctrl+b ctrl+p",
-    "command": "nano-bots.prompt",
-    "args": {
-      "state": "0470dfa445f1f11b5eb9b3089c5943c8", "mode": "add" }
+  "key": "ctrl+b ctrl+p",
+  "command": "nano-bots.prompt",
+  "args": {
+    "state": "0470dfa445f1f11b5eb9b3089c5943c8",
+    "mode": "add"
+  }
 }
 ```
 
@@ -285,7 +292,7 @@ Clone the repository using the command:
 git clone https://github.com/icebaker/vscode-nano-bots.git
 ```
 
-Navigate to the `vscode-nano-bots` folder and open it in Visual Studio Code using the command `vscode .`. Press F5 to launch the extension. 
+Navigate to the `vscode-nano-bots` folder and open it in Visual Studio Code using the command `vscode .`. Press F5 to launch the extension.
 
 For more information on extension development, refer to the [Your First Extension](https://code.visualstudio.com/api/get-started/your-first-extension) page.
 

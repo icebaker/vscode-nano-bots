@@ -20,7 +20,12 @@
     "Education",
     "Testing"
   ],
-  "keywords": ["assistant", "ai", "openai", "chatgpt"],
+  "keywords": [
+    "assistant",
+    "ai",
+    "openai",
+    "chatgpt"
+  ],
   "activationEvents": [],
   "main": "./extension.js",
   "contributes": {
@@ -28,20 +33,28 @@
       {
         "title": "🤖 Nano Bots: Prompt",
         "command": "nano-bots.prompt",
-        "args": { "state": "-", "mode": "add" }
+        "args": {
+          "state": "-",
+          "mode": "add"
+        }
       },
       {
         "title": "🤖 Nano Bots: Apply",
         "command": "nano-bots.apply",
         "args": {
-          "state": "-", "mode": "replace",
-          "prefix": "", "format": "[prompt]: [input]"
+          "state": "-",
+          "mode": "replace",
+          "prefix": "",
+          "format": "[prompt]: [input]"
         }
       },
       {
         "title": "🤖 Nano Bots: Evaluate",
         "command": "nano-bots.evaluate",
-        "args": { "state": "-", "mode": "replace" }
+        "args": {
+          "state": "-",
+          "mode": "replace"
+        }
       },
       {
         "command": "nano-bots.stop",
@@ -49,41 +62,43 @@
       }
     ],
     "configuration": {
-        "type": "object",
-        "title": "Nano Bots Settings",
-        "properties": {
-            "🤖 Nano Bots.NANO_BOTS_API_ADDRESS": {
-                "type": "string",
-                "default": "https://api.nbots.io",
-                "description": "Set the address for the Nano Bots API."
-            },
-            "🤖 Nano Bots.NANO_BOTS_USER_IDENTIFIER": {
-                "type": "string",
-                "default": "anonymous",
-                "description": "Your custom user identifier (user-name)."
-            },
-            "🤖 Nano Bots.NANO_BOTS_STREAM": {
-                "type": "boolean",
-                "default": true,
-                "description": "Enable or disable streaming."
-            }
+      "type": "object",
+      "title": "Nano Bots Settings",
+      "properties": {
+        "🤖 Nano Bots.NANO_BOTS_API_ADDRESS": {
+          "type": "string",
+          "default": "https://api.nbots.io",
+          "description": "Set the address for the Nano Bots API."
+        },
+        "🤖 Nano Bots.NANO_BOTS_USER_IDENTIFIER": {
+          "type": "string",
+          "default": "anonymous",
+          "description": "Your custom user identifier (user-name)."
+        },
+        "🤖 Nano Bots.NANO_BOTS_STREAM": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable or disable streaming."
         }
+      }
     }
   },
   "scripts": {
-    "lint": "eslint .",
+    "lint": "prettier --plugin-search-dir . --check . && eslint . --fix",
+    "format": "prettier --plugin-search-dir . --write .",
     "pretest": "npm run lint",
     "test": "node ./test/runTest.js"
   },
   "devDependencies": {
-    "@types/vscode": "^1.70.0",
     "@types/glob": "^8.1.0",
     "@types/mocha": "^10.0.1",
     "@types/node": "16.x",
+    "@types/vscode": "^1.70.0",
+    "@vscode/test-electron": "^2.3.0",
     "eslint": "^8.39.0",
     "glob": "^8.1.0",
     "mocha": "^10.2.0",
-    "typescript": "^5.0.4",
-    "@vscode/test-electron": "^2.3.0"
+    "prettier": "2.8.8",
+    "typescript": "^5.0.4"
   }
 }
