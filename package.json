@@ -70,7 +70,7 @@
           "default": "https://api.nbots.io",
           "description": "Set the address for the Nano Bots API."
         },
-        "🤖 Nano Bots.NANO_BOTS_USER_IDENTIFIER": {
+        "🤖 Nano Bots.NANO_BOTS_END_USER": {
           "type": "string",
           "default": "anonymous",
           "description": "Your custom user identifier (user-name)."

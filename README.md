@@ -50,7 +50,7 @@ Once you have access to the Nano Bots API, you can navigate to "File" -> "Prefer
 
 - `NANO_BOTS_API_ADDRESS`: `http://localhost:3048`
 - `NANO_BOTS_STREAM`: `true`
-- `NANO_BOTS_USER_IDENTIFIER`: `anonymous` (`your-name`)
+- `NANO_BOTS_END_USER`: `anonymous` (`your-name`)
 
 ![settings](https://user-images.githubusercontent.com/113217272/239404558-aacd4efa-1657-4516-baeb-d0c564c7fcb2.png)
 
@@ -129,19 +129,21 @@ You can override the default cartridge by creating your own with the name `defau
 ```yaml
 ---
 meta:
-  name: Default
   symbol: 🤖
+  name: Default
   author: Your Name
-  version: 0.0.1
+  version: 1.0.0
+  license: CC0-1.0
+  description: A helpful assistant.
 
 provider:
-  name: openai
+  id: openai
+  credentials:
+    address: ENV/OPENAI_API_ADDRESS
+    access-token: ENV/OPENAI_API_KEY
   settings:
+    user: ENV/NANO_BOTS_END_USER
     model: gpt-3.5-turbo
-    credentials:
-      address: ENV/OPENAI_API_ADDRESS
-      access-token: ENV/OPENAI_API_ACCESS_TOKEN
-      user-identifier: ENV/OPENAI_API_USER_IDENTIFIER
 ```
 
 ## Shortcuts
