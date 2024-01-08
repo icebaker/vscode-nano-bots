@@ -4,7 +4,7 @@
 
 Enhance your productivity and workflow by bringing the power of Artificial Intelligence to your code editor!
 
-![Nano Bots](https://user-images.githubusercontent.com/113217272/239403886-eca7762a-8dcb-4e71-9017-9ebcc7fad4e7.png)
+![Nano Bots](https://raw.githubusercontent.com/icebaker/assets/main/vscode-nano-bots/cover-b.png)
 
 - [Installation](#installation)
   - [Setup](#setup)
